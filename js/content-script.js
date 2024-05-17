@@ -27,6 +27,12 @@ async function update() {
 		setTimeout(function (){
 			setTabTitle(href, urlFilter[0].memo)
 		}, 1000)
+		setTimeout(function (){
+			setTabTitle(href, urlFilter[0].memo)
+		}, 2000)
+		setTimeout(function (){
+			setTabTitle(href, urlFilter[0].memo)
+		}, 3000)
 	}
 }
 
