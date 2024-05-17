@@ -6,7 +6,6 @@ const addBtn = document.getElementById('addBtn')
 const uploadIconBtn = document.getElementById('icon-preview')
 const list = document.getElementById('list')
 
-// let areaTextValue = ''
 let addType = 0 // 1-网址 2-域
 let curCamouflageList = [] // 当前伪装列表
 let tipList = []
@@ -90,7 +89,7 @@ function save_options() {
   // 保存配置
   if (curCamouflageList.map(item => item.url).indexOf(areaText.value) !== -1) return alert('已存在')
   curCamouflageList.unshift({
-    url: areaTextValue,
+    url: areaText.value,
     memo: memoText.value,
     icon: iconBase64,
     status: 1
@@ -144,7 +143,7 @@ function getUrl(type) {
     let url = tabs[0].url;
     if (url.indexOf('http') !== 0) return tip('当前页面不可用', 'error')
     url = url.replace('http://', '').replace('https://', '')
-    areaTextValue = type === 'area' ? url.substring(0, url.indexOf('/')) : url
+    let areaTextValue = type === 'area' ? url.substring(0, url.indexOf('/')) : url
     areaText.value = areaTextValue
     checkInput()
   });
